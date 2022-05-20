@@ -1,0 +1,8 @@
+body {
+  background: linear-gradient(to right, rgb(49, 114, 60), #202020, rgb(49, 114, 60));
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+
+.green {
+  color: rgb(0, 204, 68);
+}
