@@ -29,3 +29,7 @@ body {
 .spacing-below {
   margin-bottom: 25px;
 }
+
+.page-content {
+  margin-left: 20px;
+}

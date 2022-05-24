@@ -1,11 +1,18 @@
-<div class="container">
+<div class="container spacing-below">
   <div class="box text-center col-8">
     <% if current_user %>
       <h3 class="green spacing-below"><%= "Currently logged in as #{current_user.username}" %></h3>
+      <h3><%= link_to "Add a new year", new_year_path, class: "btn btn-success spacing-below" %></h3>
       <h3><%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "btn btn-success") %></h3>
     <% else %>
       <h3 class="spacing-below"><%= link_to "Log in", new_user_session_path, class: "btn btn-success" %></h3>
       <h3><%= link_to "Sign up", new_user_registration_path, class: "btn btn-success" %></h3>
     <% end %>
   </div>
+</div>
+
+<div class="text-center">
+  <% @years.each do |year| %>
+    <h3><%= link_to year.year_number, year_path(year), class: "green" %></h3>
+  <% end %>
 </div>

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :years
   attr_accessor :login
   validates :username, uniqueness: true
   # Include default devise modules. Others available are:

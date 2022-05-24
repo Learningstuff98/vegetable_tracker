@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="box text-center col-8">
+    <h2 class="green spacing-below">Start a new year</h2>
+    <%= simple_form_for @year, url: years_path do |f| %>
+      <h4 class="green spacing-below"><%= f.input :year_number %></h4>
+      <%= f.submit 'Save', class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
