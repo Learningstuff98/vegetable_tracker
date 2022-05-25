@@ -1,9 +1,5 @@
 class PagesController < ApplicationController
   def home
-    if current_user
-      @years = current_user.search(params[:keyword])
-    else
-      @years = []
-    end
+    @years = current_user.search(params[:keyword]) if current_user
   end
 end

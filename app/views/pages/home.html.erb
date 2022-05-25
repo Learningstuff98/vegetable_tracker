@@ -19,10 +19,10 @@
       <%= submit_tag("Search") %>
     <% end %>
   </div>
-<% end %>
 
-<div class="text-center">
-  <% @years.each do |year| %>
-    <h3><%= link_to year.year_number, year_path(year), class: "green" %></h3>
-  <% end %>
-</div>
+  <div class="text-center">
+    <% @years.each do |year| %>
+      <h3><%= link_to year.year_number, year_path(year), class: "green" %></h3>
+    <% end %>
+  </div>
+<% end %>

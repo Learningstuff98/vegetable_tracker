@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   def search(keyword)
     if keyword.present?
-      Year.where("year_number ILIKE ?", "%#{keyword}%") 
+      self.years.where("year_number ILIKE ?", "%#{keyword}%") 
     else
       self.years.order("created_at DESC")
     end
