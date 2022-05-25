@@ -18,6 +18,20 @@ class YearsController < ApplicationController
     @year = Year.find(params[:id])
   end
 
+  def edit
+    @year = Year.find(params[:id])
+  end
+
+  def update
+    @year = Year.find(params[:id])
+    @year.update(year_params)
+    if @year.save
+      redirect_to year_path(@year)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def year_params
