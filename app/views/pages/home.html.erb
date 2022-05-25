@@ -11,13 +11,15 @@
   </div>
 </div>
 
-<div class="text-center green spacing-below">
-  <%= form_tag(root_path, method: "get") do %>
-    <h3>Search for a year</h3>
-    <%= text_field_tag(:keyword, nil, placeholder: 'year number') %>
-    <%= submit_tag("Search") %>
-  <% end %>
-</div>
+<% if current_user %>
+  <div class="text-center green spacing-below">
+    <%= form_tag(root_path, method: "get") do %>
+      <h3>Search for a year</h3>
+      <%= text_field_tag(:keyword, nil, placeholder: 'year number') %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+<% end %>
 
 <div class="text-center">
   <% @years.each do |year| %>
