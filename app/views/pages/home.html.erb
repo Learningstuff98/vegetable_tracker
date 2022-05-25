@@ -11,6 +11,14 @@
   </div>
 </div>
 
+<div class="text-center green spacing-below">
+  <%= form_tag(root_path, method: "get") do %>
+    <h3>Search for a year</h3>
+    <%= text_field_tag(:keyword, nil, placeholder: 'year number') %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
 <div class="text-center">
   <% @years.each do |year| %>
     <h3><%= link_to year.year_number, year_path(year), class: "green" %></h3>

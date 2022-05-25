@@ -12,4 +12,12 @@ class User < ApplicationRecord
     login = conditions.delete(:login)
     where(conditions).where(["lower(username) = :value OR lower(email) = :value", {value: login.strip.downcase}]).first
   end
+
+  def search(keyword)
+    if keyword.present?
+      Year.where("year_number ILIKE ?", "%#{keyword}%") 
+    else
+      self.years.order("created_at DESC")
+    end
+  end
 end
