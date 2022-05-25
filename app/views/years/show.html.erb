@@ -1,5 +1,6 @@
 <div class="page-content">
   <h1 class="green"><%= @year.year_number %></h1>
   <h3><%= link_to "Edit", edit_year_path(@year), class: "green" %></h3>
-  <h3><%= link_to "Back to home", root_path, class: "green" %></h3>
+  <h3 class="spacing-below"><%= link_to "Back to home", root_path, class: "green" %></h3>
+  <%= button_to "Delete this year", year_path(@year), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger" %>
 </div>

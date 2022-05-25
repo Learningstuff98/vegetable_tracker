@@ -32,6 +32,12 @@ class YearsController < ApplicationController
     end
   end
 
+  def destroy
+    @year = Year.find(params[:id])
+    @year.destroy
+    redirect_to root_path
+  end
+
   private
 
   def year_params
