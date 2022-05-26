@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_24_004721) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_26_004851) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "crop_types", force: :cascade do |t|
+    t.integer "year_id"
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["year_id"], name: "index_crop_types_on_year_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -16,6 +16,7 @@ class YearsController < ApplicationController
 
   def show
     @year = Year.find(params[:id])
+    @crop_types = @year.crop_types.all
   end
 
   def edit

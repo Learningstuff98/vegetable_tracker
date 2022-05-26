@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
-  resources :years
+  resources :years do
+    resources :crop_types, only: [:new, :create]
+  end
 end
