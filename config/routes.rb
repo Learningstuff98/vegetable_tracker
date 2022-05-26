@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :years do
     resources :crop_types, only: [:new, :create]
   end
+  resources :crop_types, only: [:show, :edit, :update, :destroy]
 end

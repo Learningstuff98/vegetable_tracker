@@ -14,6 +14,31 @@ class CropTypesController < ApplicationController
     end
   end
 
+  def show
+    @crop_type = CropType.find(params[:id])
+  end
+
+  def edit
+    @crop_type = CropType.find(params[:id])
+  end
+
+  def update
+    @crop_type = CropType.find(params[:id])
+    @crop_type.update(crop_type_params)
+    if @crop_type.save
+      redirect_to crop_type_path(@crop_type)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @crop_type = CropType.find(params[:id])
+    @year = @crop_type.year
+    @crop_type.destroy
+    redirect_to year_path(@year)
+  end
+
   private
 
   def crop_type_params

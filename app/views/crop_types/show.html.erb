@@ -1,0 +1,6 @@
+<div class="page-content">
+  <h3 class="green"><%= @crop_type.name %></h3>
+  <h3><%= link_to "Edit", edit_crop_type_path(@crop_type), class: "green" %></h3>
+  <%= button_to "Delete", crop_type_path(@crop_type), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger spacing-below" %>
+  <h3><%= link_to "Back to year", year_path(@crop_type.year), class: "green" %></h3>
+</div>

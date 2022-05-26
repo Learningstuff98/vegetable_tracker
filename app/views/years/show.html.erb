@@ -6,6 +6,6 @@
   
   <h3><%= link_to "Add a type of crop", new_year_crop_type_path(@year), class: "green spacing-below" %></h3>
   <% @crop_types.each do |crop_type| %>
-    <h3 class="green"><%= crop_type.name %></h3>
+    <h3><%= link_to crop_type.name, crop_type_path(crop_type), class: "green" %></h3>
   <% end %>
 </div>
