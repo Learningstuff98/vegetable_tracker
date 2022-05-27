@@ -3,6 +3,7 @@
     <h2 class="green spacing-below"><%= "Add a new crop type for #{@year.year_number}" %></h2>
     <%= simple_form_for @crop_type, url: year_crop_types_path(@year) do |f| %>
       <h4 class="green spacing-below"><%= f.input :name %></h4>
+      <div class="notes-input spacing-below"><%= f.rich_text_area :notes %></div>
       <%= f.submit 'Save', class: 'btn btn-success' %>
     <% end %>
   </div>

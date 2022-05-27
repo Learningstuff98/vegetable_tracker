@@ -33,3 +33,7 @@ body {
 .page-content {
   margin-left: 20px;
 }
+
+.notes-input {
+  background-color: white;
+}

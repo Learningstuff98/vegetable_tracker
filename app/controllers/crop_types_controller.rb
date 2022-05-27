@@ -42,6 +42,6 @@ class CropTypesController < ApplicationController
   private
 
   def crop_type_params
-    params.require(:crop_type).permit(:name)
+    params.require(:crop_type).permit(:name, :notes)
   end
 end
