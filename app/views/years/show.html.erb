@@ -5,7 +5,9 @@
   <%= button_to "Delete this year", year_path(@year), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger spacing-below" %>
   
   <h3><%= link_to "Add a type of crop", new_year_crop_type_path(@year), class: "green spacing-below" %></h3>
-  <% @crop_types.each do |crop_type| %>
-    <h3><%= link_to crop_type.name, crop_type_path(crop_type), class: "green" %></h3>
-  <% end %>
+  <div class="box col-3">
+    <% @crop_types.each do |crop_type| %>
+      <h3><%= link_to crop_type.name, crop_type_path(crop_type), class: "green" %></h3>
+    <% end %>
+  </div>
 </div>
