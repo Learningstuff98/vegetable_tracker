@@ -1,0 +1,6 @@
+<div class="page-content">
+  <h3 class="green"><%= "Notes for #{@year.year_number}" %></h3>
+  <h3><%= link_to "Edit", edit_year_path(@year), class: "green spacing-below" %></h3>
+  <h3><%= link_to "Back to year", year_path(@year), class: "green spacing-below" %></h3>
+  <h3 class="green col-8"><%= @year.notes %></h3>
+</div>

@@ -3,6 +3,7 @@
     <h2 class="green spacing-below">Edit this year</h2>
     <%= simple_form_for @year, url: year_path(@year) do |f| %>
       <h4 class="green spacing-below"><%= f.input :year_number %></h4>
+      <div class="notes-input spacing-below"><%= f.rich_text_area :notes %></div>
       <%= f.submit 'Save', class: 'btn btn-success' %>
     <% end %>
   </div>

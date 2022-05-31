@@ -27,7 +27,7 @@ class YearsController < ApplicationController
     @year = Year.find(params[:id])
     @year.update(year_params)
     if @year.save
-      redirect_to year_path(@year)
+      redirect_to year_notes_path(@year)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,9 +39,13 @@ class YearsController < ApplicationController
     redirect_to root_path
   end
 
+  def notes
+    @year = Year.find(params[:id])
+  end
+
   private
 
   def year_params
-    params.require(:year).permit(:year_number)
+    params.require(:year).permit(:year_number, :notes)
   end
 end
